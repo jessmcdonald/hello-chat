@@ -4,7 +4,6 @@ import { StyleSheet, Text, View, TextInput } from "react-native";
 export default class Chat extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { name: "" };
   }
 
   static navigationOptions = ({ navigation }) => {
@@ -15,8 +14,18 @@ export default class Chat extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Hello {this.props.navigation.state.params.name}</Text>
+      <View
+        style={[
+          styles.container,
+          {
+            backgroundColor: this.props.navigation.state.params.backgroundColor
+          }
+        ]}
+      >
+        <Text>
+          Hello {this.props.navigation.state.params.name}, this is your chat
+          screen.
+        </Text>
       </View>
     );
   }
@@ -25,8 +34,8 @@ export default class Chat extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "pink",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    color: "#fff"
   }
 });
