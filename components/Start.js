@@ -6,8 +6,7 @@ import {
   TextInput,
   Button,
   ImageBackground,
-  TouchableOpacity,
-  TouchableHighlight
+  TouchableOpacity
 } from "react-native";
 
 export default class Start extends React.Component {
