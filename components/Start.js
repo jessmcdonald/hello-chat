@@ -35,18 +35,30 @@ export default class Start extends React.Component {
             </Text>
             <View style={styles.colorSelection}>
               <TouchableOpacity
+                accessible={true}
+                accessibilityLabel="set chat background color to Very dark (mostly black) green."
+                accessibilityRole="button"
                 style={[styles.backgroundColor1, styles.backgroundColors]}
                 onPress={() => this.setState({ backgroundColor: "#090C08" })}
               />
               <TouchableOpacity
+                accessible={true}
+                accessibilityLabel="set chat background color to Very dark grayish violet."
+                accessibilityRole="button"
                 style={[styles.backgroundColor2, styles.backgroundColors]}
                 onPress={() => this.setState({ backgroundColor: "#474056" })}
               />
               <TouchableOpacity
+                accessible={true}
+                accessibilityLabel="set chat background color to Dark grayish blue."
+                accessibilityRole="button"
                 style={[styles.backgroundColor3, styles.backgroundColors]}
                 onPress={() => this.setState({ backgroundColor: "#8A95A5" })}
               />
               <TouchableOpacity
+                accessible={true}
+                accessibilityLabel="set chat background color to Grayish green."
+                accessibilityRole="button"
                 style={[styles.backgroundColor4, styles.backgroundColors]}
                 onPress={() => this.setState({ backgroundColor: "#B9C6AE" })}
               />
@@ -54,6 +66,9 @@ export default class Start extends React.Component {
           </View>
           <View style={styles.button}>
             <TouchableOpacity
+              accessible={true}
+              accessibilityLabel="navigate to Chat screen"
+              accessibilityRole="button"
               onPress={() =>
                 this.props.navigation.navigate("Chat", {
                   name: this.state.name,
