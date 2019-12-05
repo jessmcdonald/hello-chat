@@ -9,8 +9,8 @@ const firebase = require("firebase");
 require("firebase/firestore");
 
 export default class Chat extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     if (!firebase.apps.length) {
       firebase.initializeApp({
         apiKey: "AIzaSyBvmNRw4RtZNTZcqesOpBZO6rLd690fnEI",
@@ -47,13 +47,26 @@ export default class Chat extends React.Component {
     };
   };
 
+  setUser = (
+    _id,
+    name = "Guest User",
+    avatar = "https://placeimg.com/140/140/any"
+  ) => {
+    this.setState({
+      user: {
+        _id: _id,
+        name: name,
+        avatar: avatar
+      }
+    });
+  };
   /*
    * update messages array in state
    * @function onCollectionUpdate
    * @param {string} _id
    * @param {string} text
    * @param {date} createdAt
-   * @param {string} user
+   * @param {object} user
    */
 
   onCollectionUpdate = querySnapshot => {
@@ -61,8 +74,7 @@ export default class Chat extends React.Component {
     //go through each message document
     querySnapshot.forEach(doc => {
       //get QuerySnapshot data
-      const data = doc.data();
-
+      let data = doc.data();
       //push to messages array
       messages.push({
         _id: data._id,
@@ -83,16 +95,16 @@ export default class Chat extends React.Component {
    * @param {number} _id
    * @param {string} text
    * @param {date} createdAt
-   * @param {string} user
+   * @param {object} user
    */
   addMessage() {
     const message = this.state.messages[0];
-
     this.referenceMessages.add({
       _id: message._id,
       text: message.text,
       createdAt: message.createdAt,
-      user: this.state.user
+      user: this.state.user,
+      uid: this.state.uid
     });
   }
 
@@ -111,11 +123,7 @@ export default class Chat extends React.Component {
   componentDidMount() {
     this.authUnsubscribe = firebase.auth().onAuthStateChanged(async user => {
       if (!user) {
-        try {
-          await firebase.auth().signInAnonymously();
-        } catch (err) {
-          console.log(err);
-        }
+        await firebase.auth().signInAnonymously();
       }
       //update user state with currently active user data
       this.setState({
