@@ -225,6 +225,7 @@ export default class Chat extends React.Component {
     );
   }
 
+  //if user is offline do not allow to compose new messages
   renderInputToolbar(props) {
     if (this.state.isConnected == false) {
     } else {
