@@ -4,6 +4,8 @@ import Chat from "./components/Chat";
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import KeyboardSpacer from "react-native-keyboard-spacer";
+const firebase = require("firebase");
+require("firebase/firestore");
 
 //navigation prop is passed to every component included in the navigator
 const navigator = createStackNavigator({

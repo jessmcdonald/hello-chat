@@ -1,16 +1,11 @@
 import React, { Component } from "react";
 import { GiftedChat, Bubble, InputToolbar } from "react-native-gifted-chat";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Platform,
-  AsyncStorage
-} from "react-native";
+import { StyleSheet, View, Platform, Text, AsyncStorage } from "react-native";
 //Android only - correct screen keyboard display
 import KeyboardSpacer from "react-native-keyboard-spacer";
 import NetInfo from "@react-native-community/netinfo";
+import CustomActions from "./CustomActions";
+import MapView from "react-native-maps";
 
 //establish firebase connection
 const firebase = require("firebase");
@@ -55,7 +50,7 @@ export default class Chat extends React.Component {
       title: navigation.state.params.name
     };
   };
-
+  /*
   setUser = (
     _id,
     name = "Guest User",
@@ -68,7 +63,8 @@ export default class Chat extends React.Component {
         avatar: avatar
       }
     });
-  };
+  };*/
+
   /*
    * update messages array in state
    * @function onCollectionUpdate
@@ -82,17 +78,17 @@ export default class Chat extends React.Component {
     const messages = [];
     //go through each message document
     querySnapshot.forEach(doc => {
-      //get QuerySnapshot data
-      let data = doc.data();
       //push to messages array
+      let data = doc.data();
       messages.push({
         _id: data._id,
         text: data.text,
         createdAt: data.createdAt.toDate(),
-        user: data.user
+        user: data.user,
+        image: data.image || "",
+        location: data.location || null
       });
     });
-    //set messages array as state
     this.setState({
       messages
     });
@@ -105,6 +101,8 @@ export default class Chat extends React.Component {
    * @param {string} text
    * @param {date} createdAt
    * @param {object} user
+   * @param {string} image url
+   * @param {location} location
    */
   addMessage() {
     const message = this.state.messages[0];
@@ -113,21 +111,27 @@ export default class Chat extends React.Component {
       text: message.text,
       createdAt: message.createdAt,
       user: this.state.user,
-      uid: this.state.uid
+      uid: this.state.uid,
+      image: message.image || null,
+      location: message.location || null
     });
   }
 
   //append new messages to messages array in state & database
   onSend(messages = []) {
-    this.setState(
-      previousState => ({
-        messages: GiftedChat.append(previousState.messages, messages)
-      }),
-      () => {
-        this.addMessage();
-        this.saveMessages();
-      }
-    );
+    try {
+      this.setState(
+        previousState => ({
+          messages: GiftedChat.append(previousState.messages, messages)
+        }),
+        () => {
+          this.addMessage();
+          this.saveMessages();
+        }
+      );
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   //save messages to async storage
@@ -233,6 +237,28 @@ export default class Chat extends React.Component {
     }
   }
 
+  renderCustomActions = props => {
+    return <CustomActions {...props} />;
+  };
+
+  renderCustomView(props) {
+    const { currentMessage } = props;
+    if (currentMessage.location) {
+      return (
+        <MapView
+          style={{ width: 150, height: 100, borderRadius: 13, margin: 3 }}
+          region={{
+            latitude: currentMessage.location.latitude,
+            longitude: currentMessage.location.longitude,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421
+          }}
+        />
+      );
+    }
+    return null;
+  }
+
   render() {
     return (
       <View
@@ -246,6 +272,8 @@ export default class Chat extends React.Component {
         <GiftedChat
           renderBubble={this.renderBubble.bind(this)}
           renderInputToolbar={this.renderInputToolbar.bind(this)}
+          renderActions={this.renderCustomActions.bind(this)}
+          renderCustomView={this.renderCustomView.bind(this)}
           messages={this.state.messages}
           onSend={messages => this.onSend(messages)}
           user={this.state.user}
