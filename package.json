@@ -8,6 +8,8 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-native-community/netinfo": "^4.6.1",
+    "cookies": "^0.8.0",
     "expo": "^35.0.0",
     "firebase": "^7.5.0",
     "react": "16.8.3",
