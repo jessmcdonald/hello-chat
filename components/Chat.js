@@ -71,6 +71,8 @@ export default class Chat extends React.Component {
    * @param {string} _id
    * @param {string} text
    * @param {date} createdAt
+   * @param {string} image
+   * @param {location} location
    * @param {object} user
    */
 
@@ -106,13 +108,14 @@ export default class Chat extends React.Component {
    */
   addMessage() {
     const message = this.state.messages[0];
+    console.log(message);
     this.referenceMessages.add({
       _id: message._id,
-      text: message.text,
+      text: message.text || "",
       createdAt: message.createdAt,
       user: this.state.user,
       uid: this.state.uid,
-      image: message.image || null,
+      image: message.image || "",
       location: message.location || null
     });
   }
@@ -135,7 +138,7 @@ export default class Chat extends React.Component {
   }
 
   //save messages to async storage
-  async saveMessages() {
+  saveMessages = async () => {
     try {
       await AsyncStorage.setItem(
         "messages",
@@ -144,16 +147,16 @@ export default class Chat extends React.Component {
     } catch (error) {
       console.log(error.message);
     }
-  }
+  };
 
   //for use in development
-  async deleteMessages() {
+  deleteMessages = async () => {
     try {
       await AsyncStorage.removeItem("messages");
     } catch (error) {
       console.log(error.message);
     }
-  }
+  };
 
   //load all messages from async storage
   async getMessages() {

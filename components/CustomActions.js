@@ -5,21 +5,24 @@ import * as Permissions from "expo-permissions";
 import * as ImagePicker from "expo-image-picker";
 import * as Location from "expo-location";
 import MapView from "react-native-maps";
+import firebase from "firebase";
+import "firebase/firestore";
+/*
 const firebase = require("firebase");
 require("firebase/firestore");
-
+*/
 export default class CustomActions extends React.Component {
   pickImage = async () => {
     try {
       const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
 
       if (status === "granted") {
-        let result = await ImagePicker.launchImageLibraryAsync({
+        const result = await ImagePicker.launchImageLibraryAsync({
           mediaTypes: ImagePicker.MediaTypeOptions.Images
         }).catch(error => console.log(error));
 
         if (!result.cancelled) {
-          const imageUrl = await this.uploadImage(result.uri);
+          const imageUrl = await this.uploadImageFetch(result.uri);
           this.props.onSend({ image: imageUrl });
         }
       }
@@ -39,7 +42,7 @@ export default class CustomActions extends React.Component {
           mediaTypes: ImagePicker.MediaTypeOptions.Images
         }).catch(error => console.log(error));
         if (!result.cancelled) {
-          const imageUrl = await this.uploadImage(result.uri);
+          const imageUrl = await this.uploadImageFetch(result.uri);
           this.props.onSend({ image: imageUrl });
         }
       }
@@ -72,37 +75,34 @@ export default class CustomActions extends React.Component {
     }
   };
 
-  uploadImage = async uri => {
-    try {
-      const blob = await new Promise((resolve, reject) => {
-        const xhr = new XMLHttpRequest();
-        xhr.onload = function() {
-          resolve(xhr.response);
-        };
-        xhr.onerror = function(e) {
-          console.log(e);
-          reject(new TypeError("Network request failed"));
-        };
-        xhr.responseType = "blob";
-        xhr.open("GET", uri, true);
-        xhr.send(null);
-      });
-      //this will make a unique file name for each image uploaded
-      let uriParts = uri.split("/");
-      let imageName = uriParts[uriParts.length - 1];
+  uploadImageFetch = async uri => {
+    const blob = await new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+      xhr.onload = function() {
+        resolve(xhr.response);
+      };
+      xhr.onerror = function(e) {
+        console.log(e);
+        reject(new TypeError("Network request failed"));
+      };
+      xhr.responseType = "blob";
+      xhr.open("GET", uri, true);
+      xhr.send(null);
+    });
 
-      const ref = firebase
-        .storage()
-        .ref()
-        .child(`${imageName}`);
-      const snapshot = await ref.put(blob);
-      blob.close();
-      const imageUrl = await snapshot.ref.getDownloadURL();
-      console.log(imageUrl);
-      return imageUrl;
-    } catch (error) {
-      console.log(error);
-    }
+    const imageNameBefore = uri.split("/");
+    const imageName = imageNameBefore[imageNameBefore.length - 1];
+
+    const ref = firebase
+      .storage()
+      .ref()
+      .child(`images/${imageName}`);
+
+    const snapshot = await ref.put(blob);
+
+    blob.close();
+
+    return snapshot.ref.getDownloadURL();
   };
 
   onActionPress = () => {
