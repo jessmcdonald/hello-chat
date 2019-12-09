@@ -159,7 +159,7 @@ export default class Chat extends React.Component {
   };
 
   //load all messages from async storage
-  async getMessages() {
+  getMessages = async () => {
     let messages = "";
     try {
       //if no item in storage with 'message' key, set message arry to be empty []
@@ -171,7 +171,7 @@ export default class Chat extends React.Component {
     } catch (error) {
       console.log(error.message);
     }
-  }
+  };
 
   componentDidMount() {
     NetInfo.isConnected.fetch().then(isConnected => {
