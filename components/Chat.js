@@ -75,7 +75,6 @@ export default class Chat extends React.Component {
    * @param {location} location
    * @param {object} user
    */
-
   onCollectionUpdate = querySnapshot => {
     const messages = [];
     //go through each message document
@@ -91,6 +90,7 @@ export default class Chat extends React.Component {
         location: data.location || null
       });
     });
+    //update messages array in state
     this.setState({
       messages
     });
@@ -108,7 +108,6 @@ export default class Chat extends React.Component {
    */
   addMessage() {
     const message = this.state.messages[0];
-    console.log(message);
     this.referenceMessages.add({
       _id: message._id,
       text: message.text || "",
@@ -149,7 +148,7 @@ export default class Chat extends React.Component {
     }
   };
 
-  //for use in development
+  //for use in development only
   deleteMessages = async () => {
     try {
       await AsyncStorage.removeItem("messages");
@@ -175,11 +174,13 @@ export default class Chat extends React.Component {
 
   componentDidMount() {
     NetInfo.isConnected.fetch().then(isConnected => {
+      //check if user is online
       if (isConnected) {
         console.log("online");
         this.setState({
           isConnected: true
         });
+        //if no user logged in, sign in anonymously
         this.authUnsubscribe = firebase
           .auth()
           .onAuthStateChanged(async user => {
@@ -196,6 +197,7 @@ export default class Chat extends React.Component {
               }
             });
           });
+        //get messages from firebase DB & listen for new messages
         this.referenceUser = firebase
           .firestore()
           .collection("messages")
@@ -203,6 +205,7 @@ export default class Chat extends React.Component {
         this.unsubscribeUser = this.referenceUser.onSnapshot(
           this.onCollectionUpdate
         );
+        //if user is online, load messages from local storage
       } else {
         console.log("offline");
         this.setState({
@@ -213,6 +216,7 @@ export default class Chat extends React.Component {
     });
   }
 
+  //stop listening for new messages
   componentWillUnmount() {
     this.unsubscribeUser();
     this.authUnsubscribe();
@@ -240,10 +244,12 @@ export default class Chat extends React.Component {
     }
   }
 
+  //render CustomActions toolbar, show options to add location/image to message
   renderCustomActions = props => {
     return <CustomActions {...props} />;
   };
 
+  //render location bubble using users current location
   renderCustomView(props) {
     const { currentMessage } = props;
     if (currentMessage.location) {
@@ -262,6 +268,10 @@ export default class Chat extends React.Component {
     return null;
   }
 
+  //render Chat screen
+  //use background color chosen by user in start screen
+  //bind functions to actions in GiftedChat
+  //Android only - display keyboard so it does not hide screen when typing
   render() {
     return (
       <View
