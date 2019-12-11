@@ -2,10 +2,11 @@
 
 ## What is hello-chat?
 React Native chat app
+In addition to regular text messages, users can also:
 
-:camera_flash: users can upload images from their camera roll or take a picture with device camera
+:camera_flash: upload images from their camera roll & take a picture with device camera
 
-:round_pushpin: users can send current location as a message
+:round_pushpin: send current location
 
 ## How to get hello-chat up and running
 
