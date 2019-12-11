@@ -38,9 +38,11 @@ Additionally you can preview the app using a mobile device simulator such as the
 1. Download Android Studio: https://developer.android.com/studio
 2. Follow these instructions to set up Android Studio's tools & create a virtual Android device: https://docs.expo.io/versions/latest/workflow/android-studio-emulator/
 3. Run the device by clicking green arrow button
-<image src="https://i.imgur.com/ERSd0ZJ.png" width="500" />
+    
+    <image src="https://i.imgur.com/ERSd0ZJ.png" width="500" />
 4. Select 'Run on Android Device/Emulator' in newly opened Expo tab
-<image src="https://i.imgur.com/bUg5Txf.png" width="300" />
+    
+    <image src="https://i.imgur.com/bUg5Txf.png" width="300" />
 
 
 ## Dependencies & libraries
@@ -79,19 +81,29 @@ Firebase has been used to store app data
 4. Click **'Create a project'**
 5. Give the project a name, accept the Firebase terms and **'Create Project'** (no need to set up Google Analytics)
 6. Click on **'Web'** icon in the **'Add an App'** options
-<image src="https://i.imgur.com/k67MntK.png" width="300" />
+    
+    <image src="https://i.imgur.com/k67MntK.png" width="300" />
 7. Name the app and register it
-8. Copy your Firebase configurations:   
-<image src="https://i.imgur.com/hUBoNLW.png" width="400" />   
-9. Paste your configuration details into: `/components/Chat.js` to **replace lines 19-25**   
+8. Copy your Firebase configurations:
+    
+    <image src="https://i.imgur.com/hUBoNLW.png" width="400" />
+9. Paste your configuration details into: `/components/Chat.js` to **replace lines 19-25**
 10. Go to Firebase Console in menu on left hand side of page navigate to **Develop > Database**
 11. Click **'Create Database'** and select **'Start in test mode'**
 12. Select your region and click **'Done'**
 13. Now you can create the collection, this will store all the messages
-<image src="https://i.imgur.com/KmZYiMr.png" width="400" />
+    
+    <image src="https://i.imgur.com/KmZYiMr.png" width="400" />
 
 
-2. Follow instructions: https://docs.expo.io/versions/latest/guides/using-firebase/
+
+
+
+
+
+
+
+
 
 Database configuration (which one, where to put database credentials, etc.)
 
