@@ -92,24 +92,19 @@ Firebase has been used to store app data
     
     <image src="https://i.imgur.com/hUBoNLW.png" width="400" />
 9. Paste your configuration details into: `/components/Chat.js` to **replace lines 19-25**
-10. Go to Firebase Console in menu on left hand side of page navigate to **Develop > Database**
+10. Go to Firebase Console, in the menu on the left hand side of the page, navigate to **Develop > Database**
 11. Click **'Create Database'** and select **'Start in test mode'**
 12. Select your region and click **'Done'**
-13. Now you can create the collection, this will store all the messages
+13. Now you can click 'Start Collection', this will create the database in which to store all the messages
     
     <image src="https://i.imgur.com/KmZYiMr.png" width="400" />
+14. Fields for each message document will be:
+    
+    <image src="https://i.imgur.com/JRGoK0a.png" width="400" />
+15. Finally navigate to **Develop >Authentication > Sign-in method** and enable **Anonymous** sign in method, 
+    
+    <image src="https://i.imgur.com/jjMm9Mj.png" width="400" />
 
-
-
-
-
-
-
-
-
-
-
-Database configuration (which one, where to put database credentials, etc.)
 
 ## User flows & Kanban board
 See the user flows & Kanban board I created before building this project, these were based on the project brief:
