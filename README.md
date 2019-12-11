@@ -22,7 +22,17 @@ In addition to regular text messages, users can also:
 
 ## How to set up the database
 
+## User flows
+See the user flows I created before building this project:
 
+Enter chat & read messages even if offline
+https://whimsical.com/4qpwgc47LGRASRj1YiHo4y
+
+Send images
+https://whimsical.com/AsnzYSzzJVv9oEg3HXAczo
+
+Send current location
+https://whimsical.com/AsnzYSzzJVv9oEg3HXAczo
  
  
 
