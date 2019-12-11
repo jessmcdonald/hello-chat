@@ -1,4 +1,32 @@
-import React, { Component } from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Start.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Start.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { Component } from "react";
 
 import {
   StyleSheet,
@@ -29,55 +57,55 @@ export default class Start extends React.Component {
      * navigate to chat screen on button press
      */
     return (
-      <ImageBackground
+      &lt;ImageBackground
         source={require("../assets/backgroundImage.png")}
         style={styles.background}
       >
-        <Text style={styles.appTitle}>hello-chat</Text>
-        <View style={styles.inputContainer}>
-          <TextInput
+        &lt;Text style={styles.appTitle}>hello-chat&lt;/Text>
+        &lt;View style={styles.inputContainer}>
+          &lt;TextInput
             style={styles.textInput}
             onChangeText={name => this.setState({ name })}
             placeholder="Your Name"
             value={this.state.name}
           />
-          <View>
-            <Text style={styles.chooseBackground}>
+          &lt;View>
+            &lt;Text style={styles.chooseBackground}>
               Choose background colour:
-            </Text>
-            <View style={styles.colorSelection}>
-              <TouchableOpacity
+            &lt;/Text>
+            &lt;View style={styles.colorSelection}>
+              &lt;TouchableOpacity
                 accessible={true}
                 accessibilityLabel="set chat background color to Very dark (mostly black) green."
                 accessibilityRole="button"
                 style={[styles.backgroundColor1, styles.backgroundColors]}
                 onPress={() => this.setState({ backgroundColor: "#090C08" })}
               />
-              <TouchableOpacity
+              &lt;TouchableOpacity
                 accessible={true}
                 accessibilityLabel="set chat background color to Very dark grayish violet."
                 accessibilityRole="button"
                 style={[styles.backgroundColor2, styles.backgroundColors]}
                 onPress={() => this.setState({ backgroundColor: "#474056" })}
               />
-              <TouchableOpacity
+              &lt;TouchableOpacity
                 accessible={true}
                 accessibilityLabel="set chat background color to Dark grayish blue."
                 accessibilityRole="button"
                 style={[styles.backgroundColor3, styles.backgroundColors]}
                 onPress={() => this.setState({ backgroundColor: "#8A95A5" })}
               />
-              <TouchableOpacity
+              &lt;TouchableOpacity
                 accessible={true}
                 accessibilityLabel="set chat background color to Grayish green."
                 accessibilityRole="button"
                 style={[styles.backgroundColor4, styles.backgroundColors]}
                 onPress={() => this.setState({ backgroundColor: "#B9C6AE" })}
               />
-            </View>
-          </View>
-          <View style={styles.button}>
-            <TouchableOpacity
+            &lt;/View>
+          &lt;/View>
+          &lt;View style={styles.button}>
+            &lt;TouchableOpacity
               accessible={true}
               accessibilityLabel="navigate to Chat screen"
               accessibilityRole="button"
@@ -88,11 +116,11 @@ export default class Start extends React.Component {
                 })
               }
             >
-              <Text style={styles.buttonText}>Start Chatting</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </ImageBackground>
+              &lt;Text style={styles.buttonText}>Start Chatting&lt;/Text>
+            &lt;/TouchableOpacity>
+          &lt;/View>
+        &lt;/View>
+      &lt;/ImageBackground>
     );
   }
 }
@@ -101,8 +129,8 @@ export default class Start extends React.Component {
  * styling for start screen:
  * backgroundimage fill screen
  * element spacing using flex
- * title & button text styling
- * background color selector buttons, fill & display as circles
+ * title &amp; button text styling
+ * background color selector buttons, fill &amp; display as circles
  */
 const styles = StyleSheet.create({
   background: {
@@ -187,3 +215,26 @@ const styles = StyleSheet.create({
     backgroundColor: "#B9C6AE"
   }
 });
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module.exports.html">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addMessage">addMessage</a></li><li><a href="global.html#componentDidMount">componentDidMount</a></li><li><a href="global.html#componentWillUnmount">componentWillUnmount</a></li><li><a href="global.html#deleteMessages">deleteMessages</a></li><li><a href="global.html#getLocation">getLocation</a></li><li><a href="global.html#getMessages">getMessages</a></li><li><a href="global.html#onActionPress">onActionPress</a></li><li><a href="global.html#onCollectionUpdate">onCollectionUpdate</a></li><li><a href="global.html#onSend">onSend</a></li><li><a href="global.html#pickImage">pickImage</a></li><li><a href="global.html#renderBubble">renderBubble</a></li><li><a href="global.html#renderCustomActions">renderCustomActions</a></li><li><a href="global.html#renderCustomView">renderCustomView</a></li><li><a href="global.html#renderInputToolbar">renderInputToolbar</a></li><li><a href="global.html#saveMessages">saveMessages</a></li><li><a href="global.html#takePhoto">takePhoto</a></li><li><a href="global.html#uploadImageFetch">uploadImageFetch</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Wed Dec 11 2019 22:05:46 GMT+0100 (Central European Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
