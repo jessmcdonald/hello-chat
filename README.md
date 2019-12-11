@@ -29,7 +29,7 @@ Once Expo is downloaded on your mobile device & and app is running you can previ
   *OR*
   * from the newly opened Expo tab in browser
   
-<image src="https://i.imgur.com/6zx77lH.png" height=‘150’>      <image src="https://i.imgur.com/KrhBP3E.png" height=‘150’>
+<image src="https://i.imgur.com/6zx77lH.png" height=‘50’>      <image src="https://i.imgur.com/KrhBP3E.png" height=‘50’>
 
 ### Using a simulator
 Additionally you can preview the app using a mobile device simulator such as the emulator in Android Studio
