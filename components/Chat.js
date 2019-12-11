@@ -8,8 +8,8 @@ import CustomActions from "./CustomActions";
 import MapView from "react-native-maps";
 
 //establish firebase connection
-const firebase = require("firebase");
-require("firebase/firestore");
+import firebase from "firebase";
+import "firebase/firestore";
 
 export default class Chat extends React.Component {
   constructor() {

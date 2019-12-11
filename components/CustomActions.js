@@ -5,22 +5,23 @@ import * as Permissions from "expo-permissions";
 import * as ImagePicker from "expo-image-picker";
 import * as Location from "expo-location";
 import MapView from "react-native-maps";
+//establish firebase connection
 import firebase from "firebase";
 import "firebase/firestore";
-/*
-const firebase = require("firebase");
-require("firebase/firestore");
-*/
+
 export default class CustomActions extends React.Component {
+  //allow user to select image from CAMERA_ROLL to add to message
   pickImage = async () => {
     try {
+      //ask permission to access device CAMERA_ROLL
       const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
-
+      //if access granted launch ImagePicker.launchImageLibrary to select image
       if (status === "granted") {
         const result = await ImagePicker.launchImageLibraryAsync({
+          //only allow images
           mediaTypes: ImagePicker.MediaTypeOptions.Images
         }).catch(error => console.log(error));
-
+        //if user does not click cancel, get ImageUrl + add ImageUrl to message props + send message
         if (!result.cancelled) {
           const imageUrl = await this.uploadImageFetch(result.uri);
           this.props.onSend({ image: imageUrl });
@@ -31,16 +32,21 @@ export default class CustomActions extends React.Component {
     }
   };
 
+  //allow user to take photo using device CAMERA to add to message
   takePhoto = async () => {
     try {
+      //ask permission to access CAMERA & CAMERA_ROLL
       const { status } = await Permissions.askAsync(
         Permissions.CAMERA_ROLL,
         Permissions.CAMERA
       );
+      //if access granted launch ImagePicker.launchCamera to take photo
       if (status === "granted") {
         let result = await ImagePicker.launchCameraAsync({
+          //only allow images
           mediaTypes: ImagePicker.MediaTypeOptions.Images
         }).catch(error => console.log(error));
+        //if user does not click cancel, get ImageUrl + add ImageUrl to message props + send message
         if (!result.cancelled) {
           const imageUrl = await this.uploadImageFetch(result.uri);
           this.props.onSend({ image: imageUrl });
@@ -51,16 +57,20 @@ export default class CustomActions extends React.Component {
     }
   };
 
+  //allow user to send current location as message
   getLocation = async () => {
     try {
+      //ask permission to access device current location
       const { status } = await Permissions.askAsync(Permissions.LOCATION);
-
+      //if access granted launch Location.getCurrentPosition & assign result to 'result'
       if (status === "granted") {
         let result = await Location.getCurrentPositionAsync({}).catch(error =>
           console.log(error)
         );
+        //get latitude & longitude from result
         const longitude = JSON.stringify(result.coords.longitude);
         const latitude = JSON.stringify(result.coords.latitude);
+        //once result has been defined send message with lat & long as message props
         if (result) {
           this.props.onSend({
             location: {
@@ -75,6 +85,12 @@ export default class CustomActions extends React.Component {
     }
   };
 
+  /**
+   * called during pickImage & takePhoto functions
+   * upload image to firestoreDB
+   * convert to blob
+   * get image URL
+   */
   uploadImageFetch = async uri => {
     try {
       const blob = await new Promise((resolve, reject) => {
@@ -104,6 +120,10 @@ export default class CustomActions extends React.Component {
     }
   };
 
+  /**
+   * called by pressing + button
+   * opens actionSheet menu & assigns functions to menu options
+   */
   onActionPress = () => {
     const options = [
       "Choose From Library",
@@ -133,6 +153,7 @@ export default class CustomActions extends React.Component {
     );
   };
 
+  //render '+' button> onPress shows actionSheet menu
   render() {
     return (
       <TouchableOpacity
@@ -149,7 +170,7 @@ export default class CustomActions extends React.Component {
     );
   }
 }
-
+//styles for '+' button
 const styles = StyleSheet.create({
   container: {
     width: 26,
