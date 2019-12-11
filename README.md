@@ -9,7 +9,7 @@ In addition to sending regular text messages, users can also:
 
 :round_pushpin: send their current location
 
- <image src="https://i.imgur.com/DTCC3BL.png" width='300'>  <image src="https://i.imgur.com/GzDdyAY.png" width='300'>
+ <image src="https://i.imgur.com/DTCC3BL.png" width="300"/>  <image src="https://i.imgur.com/GzDdyAY.png" width="300"/>
  
 
 ## How to get hello-chat up and running
@@ -20,25 +20,28 @@ In addition to sending regular text messages, users can also:
 2. Install Expo command line tool: `npm install expo-cli --global`
 2. Download Expo to your mobile device: search Expo in your device's App Store,
 [more info on Expo: https://expo.io/learn]
-5. Run the app: `expo start` (Expo will open a new tab in your browser)
+5. Run the app: `expo start` [Expo will open a new tab in your browser]
 
 ## How to preview the app
 ### On your mobile device
 Once Expo is downloaded on your mobile device & and app is running you can preview the app on your mobile device either:
   * by scanning the QR code either from your terminal
+  
   *OR*
+  
   * from the newly opened Expo tab in browser
   
-<image src="https://i.imgur.com/6zx77lH.png" height=‘50’>      <image src="https://i.imgur.com/KrhBP3E.png" height=‘50’>
+<image src="https://i.imgur.com/6zx77lH.png" height="400" />   <image src="https://i.imgur.com/KrhBP3E.png" height="400" />
 
 ### Using a simulator
 Additionally you can preview the app using a mobile device simulator such as the emulator in Android Studio
 1. Download Android Studio: https://developer.android.com/studio
 2. Follow these instructions to set up Android Studio's tools & create a virtual Android device: https://docs.expo.io/versions/latest/workflow/android-studio-emulator/
-3. Run the device <image src="https://i.imgur.com/ERSd0ZJ.png" width="50" />
-4. Select 'Run on Android Device/Emulator <image src="https://i.imgur.com/bUg5Txf.png" width="50" />
+3. Run the device by clicking green arrow button
+<image src="https://i.imgur.com/ERSd0ZJ.png" width="500" />
+4. Select 'Run on Android Device/Emulator' in newly opened Expo tab
+<image src="https://i.imgur.com/bUg5Txf.png" width="300" />
 
-Database configuration (which one, where to put database credentials, etc.)
 
 ## Dependencies & libraries
 #### expo
@@ -69,6 +72,7 @@ Database configuration (which one, where to put database credentials, etc.)
 To install all dependencies run `npm install` from the project directory
 
 ## How to set up the database
+Database configuration (which one, where to put database credentials, etc.)
 
 ## User flows & Kanban board
 See the user flows & Kanban board I created before building this project, these were based on the project brief:
