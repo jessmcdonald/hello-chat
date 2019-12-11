@@ -1,5 +1,18 @@
 # hello-chat
+
+## What is hello-chat?
 React Native chat app
+
+## How to get hello-chat up and running
+
+## Project dependencies
+(e.g., which version of Expo)
+
+## hello-chat's tech-stack
+
+## Libraries
+
+## How to set up the database
 
 
  
