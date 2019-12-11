@@ -27,14 +27,15 @@ Once Expo is downloaded on your mobile device & and app is running you can previ
   * by scanning the QR code either from your terminal
   *OR*
   * from the newly opened Expo tab in browser
-<image src="https://i.imgur.com/6zx77lH.png" height=‘300’>      <image src="https://i.imgur.com/KrhBP3E.png" height=‘300’>
+  
+<image src="https://i.imgur.com/6zx77lH.png" height=‘150’>      <image src="https://i.imgur.com/KrhBP3E.png" height=‘150’>
 
 ### Using a simulator
 Additionally you can preview the app using a mobile device simulator such as the emulator in Android Studio
 1. Download Android Studio: https://developer.android.com/studio
 2. Follow these instructions to set up Android Studio's tools & create a virtual Android device: https://docs.expo.io/versions/latest/workflow/android-studio-emulator/
-3. Run the device <image src="https://i.imgur.com/ERSd0ZJ.png" height=‘300’>
-4. Select 'Run on Android Device/Emulator <image src="https://i.imgur.com/bUg5Txf.png" height=‘300’>
+3. Run the device <image src="https://i.imgur.com/ERSd0ZJ.png" width=‘150’>
+4. Select 'Run on Android Device/Emulator <image src="https://i.imgur.com/bUg5Txf.png" width=‘50’>
 
 Database configuration (which one, where to put database credentials, etc.)
 
