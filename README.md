@@ -3,13 +3,14 @@
 ## What is hello-chat?
 A mobile chat app built with React Native using Expo
 
- <image src="https://i.imgur.com/DTCC3BL.png" width='300'>  <image src="https://i.imgur.com/GzDdyAY.png" width='300'>
- 
 In addition to sending regular text messages, users can also:
 
 :camera_flash: upload images from their camera roll & take a picture with device camera
 
 :round_pushpin: send their current location
+
+ <image src="https://i.imgur.com/DTCC3BL.png" width='300'>  <image src="https://i.imgur.com/GzDdyAY.png" width='300'>
+ 
 
 ## How to get hello-chat up and running
 1. Download project files from this repo
@@ -34,8 +35,8 @@ Once Expo is downloaded on your mobile device & and app is running you can previ
 Additionally you can preview the app using a mobile device simulator such as the emulator in Android Studio
 1. Download Android Studio: https://developer.android.com/studio
 2. Follow these instructions to set up Android Studio's tools & create a virtual Android device: https://docs.expo.io/versions/latest/workflow/android-studio-emulator/
-3. Run the device <image src="https://i.imgur.com/ERSd0ZJ.png" width=‘150’>
-4. Select 'Run on Android Device/Emulator <image src="https://i.imgur.com/bUg5Txf.png" width=‘50’>
+3. Run the device <image src="https://i.imgur.com/ERSd0ZJ.png" width="150">
+4. Select 'Run on Android Device/Emulator <image src="https://i.imgur.com/bUg5Txf.png" width="50">
 
 Database configuration (which one, where to put database credentials, etc.)
 
