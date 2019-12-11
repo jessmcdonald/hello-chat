@@ -1,7 +1,9 @@
-# hello-chat
+# hello-chat :wave:
 
 ## What is hello-chat?
 React Native chat app
+:camera_flash: users can upload images from their camera roll or take a picture with device camera
+:round_pushpin: users can send current location as a message
 
 ## How to get hello-chat up and running
 
