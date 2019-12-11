@@ -5,7 +5,7 @@ A mobile chat app built with [React Native](https://facebook.github.io/react-nat
 
 In addition to sending regular text messages, users can also:
 
-- :camera_flash: upload images from their camera roll & take a picture with their device camera
+- :camera_flash: upload images from their camera roll & take a picture with their device's camera
 
 - :round_pushpin: send their current location
 
@@ -15,7 +15,7 @@ In addition to sending regular text messages, users can also:
 ## How to get hello-chat up and running
 1. Download project files from this repo
 2. Navigate to project directory: `cd hello-chat`
-2. Download all dependencies as detailed in section below
+2. Download all dependencies as detailed in [section](##dependencies--libraries) below
 2. If you do not already have Node.js you will need to download it: https://nodejs.org/en/
 2. Install Expo command line tool: `npm install expo-cli --global`
 2. Download Expo to your mobile device: search Expo in your device's App Store,
