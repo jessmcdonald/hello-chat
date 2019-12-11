@@ -2,6 +2,9 @@
 
 ## What is hello-chat?
 React Native chat app
+
+ <image src="https://i.imgur.com/DTCC3BL.png" width='300'>  <image src="https://i.imgur.com/GzDdyAY.png" width='300'>
+ 
 In addition to regular text messages, users can also:
 
 :camera_flash: upload images from their camera roll & take a picture with device camera
@@ -21,7 +24,7 @@ In addition to regular text messages, users can also:
 
 
  
-  <image src="https://i.imgur.com/DTCC3BL.png" width='300'>  <image src="https://i.imgur.com/GzDdyAY.png" width='300'>
+ 
 
 
 
