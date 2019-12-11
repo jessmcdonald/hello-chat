@@ -1,13 +1,13 @@
 # hello-chat :wave:
 
 ## What is hello-chat?
-A mobile chat app built with React Native using Expo
+A mobile chat app built with [React Native](https://facebook.github.io/react-native/) using [Expo](https://expo.io/tools)
 
 In addition to sending regular text messages, users can also:
 
-:camera_flash: upload images from their camera roll & take a picture with device camera
+- :camera_flash: upload images from their camera roll & take a picture with their device camera
 
-:round_pushpin: send their current location
+- :round_pushpin: send their current location
 
  <image src="https://i.imgur.com/DTCC3BL.png" width="300"/>  <image src="https://i.imgur.com/GzDdyAY.png" width="300"/>
  
@@ -72,6 +72,27 @@ Additionally you can preview the app using a mobile device simulator such as the
 To install all dependencies run `npm install` from the project directory
 
 ## How to set up the database
+Firebase has been used to store app data
+1. Go to: https://firebase.google.com/
+2. Login with your Google account or create a new account if you do not have a Google account
+3. Click **'Go to Console'** in top right corner
+4. Click **'Create a project'**
+5. Give the project a name, accept the Firebase terms and **'Create Project'** (no need to set up Google Analytics)
+6. Click on **'Web'** icon in the **'Add an App'** options
+<image src="https://i.imgur.com/k67MntK.png" width="300" />
+7. Name the app and register it
+8. Copy your Firebase configurations:   
+<image src="https://i.imgur.com/hUBoNLW.png" width="400" />   
+9. Paste your configuration details into: `/components/Chat.js` to **replace lines 19-25**   
+10. Go to Firebase Console in menu on left hand side of page navigate to **Develop > Database**
+11. Click **'Create Database'** and select **'Start in test mode'**
+12. Select your region and click **'Done'**
+13. Now you can create the collection, this will store all the messages
+<image src="https://i.imgur.com/KmZYiMr.png" width="400" />
+
+
+2. Follow instructions: https://docs.expo.io/versions/latest/guides/using-firebase/
+
 Database configuration (which one, where to put database credentials, etc.)
 
 ## User flows & Kanban board
