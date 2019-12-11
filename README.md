@@ -24,14 +24,18 @@ In addition to sending regular text messages, users can also:
 
 ## How to preview the app
 ### On your mobile device
-Once Expo is downloaded on your mobile device & and app is running you can preview the app on your mobile device either:
-  * by scanning the QR code either from your terminal
+Once Expo is downloaded on your mobile device & and app is running you can preview the app on your mobile device by scanning the QR code either:
+  * from your terminal
+      
+      <image src="https://i.imgur.com/6zx77lH.png" width="250" />
   
   *OR*
   
   * from the newly opened Expo tab in browser
+      
+      <image src="https://i.imgur.com/KrhBP3E.png" width="350" />
   
-<image src="https://i.imgur.com/6zx77lH.png" height="400" />   <image src="https://i.imgur.com/KrhBP3E.png" height="400" />
+   
 
 ### Using a simulator
 Additionally you can preview the app using a mobile device simulator such as the emulator in Android Studio
