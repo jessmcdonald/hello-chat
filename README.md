@@ -2,8 +2,10 @@
 React Native chat app
 
 
+ 
+  <image src="https://i.imgur.com/DTCC3BL.png" >
 
 
-![hello-chat start screen](https://i.imgur.com/DTCC3BL.png | width=100)
+
 
 ![hello-chat chat screen](https://i.imgur.com/GzDdyAY.png)
