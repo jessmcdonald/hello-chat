@@ -111,7 +111,7 @@ See the user flows & Kanban board I created before building this project, these 
 ##### Enter chat & read messages even if offline:
 https://whimsical.com/4qpwgc47LGRASRj1YiHo4y
 ##### Send images:
-https://whimsical.com/AsnzYSzzJVv9oEg3HXAczo
+https://whimsical.com/XyNtQLnhKrc6b7hjh6qYzG
 ##### Send current location:
 https://whimsical.com/AsnzYSzzJVv9oEg3HXAczo
 ##### Kanban board
