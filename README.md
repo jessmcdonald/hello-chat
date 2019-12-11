@@ -35,8 +35,8 @@ Once Expo is downloaded on your mobile device & and app is running you can previ
 Additionally you can preview the app using a mobile device simulator such as the emulator in Android Studio
 1. Download Android Studio: https://developer.android.com/studio
 2. Follow these instructions to set up Android Studio's tools & create a virtual Android device: https://docs.expo.io/versions/latest/workflow/android-studio-emulator/
-3. Run the device <image src="https://i.imgur.com/ERSd0ZJ.png" width="150">
-4. Select 'Run on Android Device/Emulator <image src="https://i.imgur.com/bUg5Txf.png" width="50">
+3. Run the device <image src="https://i.imgur.com/ERSd0ZJ.png" width="50" />
+4. Select 'Run on Android Device/Emulator <image src="https://i.imgur.com/bUg5Txf.png" width="50" />
 
 Database configuration (which one, where to put database credentials, etc.)
 
