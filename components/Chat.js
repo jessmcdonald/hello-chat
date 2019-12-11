@@ -268,10 +268,12 @@ export default class Chat extends React.Component {
     return null;
   }
 
-  //render Chat screen
-  //use background color chosen by user in start screen
-  //bind functions to actions in GiftedChat
-  //Android only - display keyboard so it does not hide screen when typing
+  /*
+   * render Chat screen
+   * use background color chosen by user in start screen
+   * bind functions to actions in GiftedChat
+   * Android only - display keyboard so it does not hide screen when typing
+   */
   render() {
     return (
       <View

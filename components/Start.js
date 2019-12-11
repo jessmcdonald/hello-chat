@@ -5,7 +5,6 @@ import {
   Text,
   View,
   TextInput,
-  Button,
   ImageBackground,
   TouchableOpacity
 } from "react-native";
@@ -13,9 +12,16 @@ import {
 export default class Start extends React.Component {
   constructor(props) {
     super(props);
+    //initialize state to be used later
     this.state = { name: "", backgroundColor: "" };
   }
 
+  /*
+   * render start screen
+   * setState name based on user inout in text input field
+   * setState backgroundColor based on user click on TouchableOpacity color option
+   * navigate to chat screen on button press
+   */
   render() {
     return (
       <ImageBackground
@@ -86,6 +92,13 @@ export default class Start extends React.Component {
   }
 }
 
+/*
+ * styling for start screen:
+ * backgroundimage fill screen
+ * element spacing using flex
+ * title & button text styling
+ * background color selector buttons, fill & display as circles
+ */
 const styles = StyleSheet.create({
   background: {
     flex: 1,
